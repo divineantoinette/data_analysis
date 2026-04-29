@@ -1,5 +1,6 @@
 --Create a database
 CREATE DATABASE Human_ResourcesDB;
+
 --Create a table: employees
 CREATE TABLE employees (
 id INT PRIMARY KEY,
@@ -8,6 +9,7 @@ last_name VARCHAR(120),
 department VARCHAR(120),
 salary DECIMAL (10,2)
 );
+
 --Populate the values into the employees table
 INSERT INTO employees (id, first_name, last_name, department, salary)
 VALUES
