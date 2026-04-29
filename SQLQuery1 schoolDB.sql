@@ -1,4 +1,3 @@
---
 CREATE DATABASE schoolDB;
 USE schoolDB;
 CREATE TABLE course(
