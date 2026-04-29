@@ -1,13 +1,16 @@
 --Create a database and name it collegeDB
 CREATE DATABASE collegeDB
+  
 --Switch to collegeDB
 USE collegeDB
+  
 --Create a course table and columns include; courseid, course_name, location
 CREATE TABLE course(
 courseid CHAR(4) PRIMARY KEY NOT NULL,
 course_name VARCHAR(30) NOT NULL,
 course_location VARCHAR(16) NOT NULL
 );
+
 --Create a student table and columns include; studentid (primary key), name, address, age, courseid (foreign key)
 CREATE TABLE student(
 studentid CHAR(3) PRIMARY KEY,
@@ -17,23 +20,29 @@ age INT,
 courseid CHAR(4),
 CONSTRAINT fk_courseid FOREIGN KEY (courseid) REFERENCES course(courseid)
 );
+
 --Populate the course table
 --C100, Computing, Riverside East
 --C200, Accounting, Riverside West
 INSERT INTO course(courseid, course_name, course_location)
 VALUES ('C100', 'Computing', 'Riverside East'),
 ('C200', 'Accounting', 'Riverside West');
+
 --Populate the student table
 INSERT INTO student(studentid, std_name, std_address, age, courseid)
 VALUES ('100', 'Bobby', 'Dundee', 17, 'C100');
+
 --Retrieve data from a table
 SELECT * FROM course;
 SELECT * FROM student;
+
 --Modify the course table by adding a new column
 ALTER TABLE course
 ADD tutor_name VARCHAR(35);
+
 --Retrieve data from the course table
 SELECT * FROM course;
+
 --Update tutor name
 --C100, Tim
 --C200, Brian
